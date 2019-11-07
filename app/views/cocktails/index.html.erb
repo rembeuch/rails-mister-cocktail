@@ -1,9 +1,17 @@
-<h1>Cocktails#index</h1>
- <ul>
+<div>
+<h1 class="navbar text-black" style="background-color: white; ">Cocktails</h1>
+</div>
+<div>
+ <ul >
   <% @cocktails.each do |cocktail| %>
-    <li><%= cocktail.name %> <%= link_to 'Show', cocktail, class: "btn bnt-flat btn-success" %></li>
+    <li class="card" style="width: 18rem; border: 1px solid black; border-radius: 10px;margin: 30px; box-shadow: 10px 5px 5px black;">
+  <div class="card-body" style="text-align: center;">
+    <h5 class="card-title"><%= cocktail.name %> <i class="fas fa-cocktail"></i></h5>
+    <p class="card-text"></p>
+    <p class="btn btn-success"><%= link_to 'Show', cocktail %></p>
+  </div> </li>
   <% end %>
   </ul>
-
-  <%= link_to 'New Cocktail', new_cocktail_path, class: "btn btn-primary" %>
+</div>
+  <%= link_to 'New Cocktail', new_cocktail_path, class: "btn btn-warning" %>
 </div>
