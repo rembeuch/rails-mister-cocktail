@@ -1,17 +1,24 @@
 <div>
-<h1 class="navbar text-black" style="background-color: white; ">Cocktails</h1>
+<h1 class="navbar text-black" style="background-color: white; opacity: 0.8; ">Cocktails</h1>
 </div>
 <div>
  <ul >
   <% @cocktails.each do |cocktail| %>
     <li class="card" style="width: 18rem; border: 1px solid black; border-radius: 10px;margin-bottom: 10px; box-shadow: 10px 5px 5px black;">
-  <div class="card-body" style="text-align: center;">
-    <h5 class="card-title"><%= cocktail.name %> <i class="fas fa-cocktail"></i></h5>
-    <p class="card-text"></p>
-    <p class="btn btn-success"><%= link_to 'Show', cocktail %></p>
-  </div> </li>
+    <div class="card-body" style="text-align: center;">
+      <h5 class="card-title"><%= cocktail.name %> <i class="fas fa-cocktail"></i></h5>
+      <p class="card-text"></p>
+          <div><p class="btn btn-success" style="margin-right: 4px"><%= link_to 'Show', cocktail %></p>
+      <%= cl_image_tag("jdmmoy3bwhmkucrse0gd",
+          width: 80, height: 100, crop: :fill) %>
+      </div>
+    </div>
+    </li>
   <% end %>
   </ul>
 </div>
   <%= link_to 'New Cocktail', new_cocktail_path, class: "btn btn-warning" %>
 </div>
+
+
+
